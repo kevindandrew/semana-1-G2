@@ -79,3 +79,17 @@ SELECT
     p.total
 FROM clientes c 
 FULL OUTER JOIN pedidos p ON c.id = p.cliente_id
+
+-- agregando tabla intermedia
+CREATE TABLE detalle_pedido(
+    id SERIAL PRIMARY KEY,
+    pedido_id INT NOT NULL,
+    producto_id INT NOT NULL, 
+    cantidad INT NOT NULL,
+    CONSTRAINT fk_pedidos_detalle_pedido
+    FOREIGN KEY (pedido_id)
+    REFERENCES pedidos(id),
+    CONSTRAINT fk_detalle_producto
+    FOREIGN KEY (producto_id)
+    REFERENCES productos(id)
+)

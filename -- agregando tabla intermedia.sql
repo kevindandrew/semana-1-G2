@@ -37,3 +37,13 @@ FROM clientes c
 INNER JOIN pedidos p ON c.id = p.cliente_id
 INNER JOIN detalle_pedido dp ON p.id = dp.pedido_id
 INNER JOIN productos pr ON dp.producto_id = pr.id
+
+/* 
+    ejercicio 1: obten una lista de todas las ciudades registradas en la tabla 
+    clientes y la cantidad de pedidos asociados
+
+    ejercicio 2: encuentra que pedidos no tienen ningun cliente asociado
+
+    ejercicio 3: muestra el listado de todos los clientes con el monto total acumulado de sus compras 
+    los clientes sin pedidos deben mostrar 0.00 en lugar de NULL 
+ */
